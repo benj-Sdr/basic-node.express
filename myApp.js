@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
 //Ex.5 Serve JSON on a Specific Route
   
 app.get('/json', (req, res) => {
-  let response = '';
-  if(process.env.MESSAGE_STYLE === 'uppercase') {
+  console.log(process.env['MESSAGE_STYLE'])
+  if(process.env['MESSAGE_STYLE']=== 'uppercase') {
     response = "Hello json".toUpperCase();
   }
   else {
@@ -37,6 +37,7 @@ app.get('/json', (req, res) => {
     res.json({
       "messgae": response
     });
+    
 })
 
 
