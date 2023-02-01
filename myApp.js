@@ -1,6 +1,11 @@
 let express = require('express');
 let app = express();
 
+//To use middleware functions, mount the functions to app.use()
+//Ex.4 Serve Static Assets
+
+app.use('/public', express.static(__dirname + '/public'));
+
 //Ex.1
 //console.log('Hello World');
 
@@ -15,6 +20,9 @@ app.get('/', (req, res) => {
     absolutePath = __dirname + '/views/index.html';
     res.sendFile(absolutePath);
 })
+
+
+
 
 
 
