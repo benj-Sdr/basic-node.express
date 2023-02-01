@@ -1,6 +1,9 @@
 let express = require('express');
 let app = express();
 
+//Part of Ex.6 This is to load the environment varibles
+require('dotenv').config();
+
 //To use middleware functions, mount the functions to app.use()
 //Ex.4 Serve Static Assets
 
@@ -22,8 +25,14 @@ app.get('/', (req, res) => {
 })
 
 //Ex.5 Serve JSON on a Specific Route
+  
 app.get('/json', (req, res) => {
+  if(process.env.MESSAGE_STYLE === 'uppercase') {
+    res.json({"message": "HELLO JSON"});
+  } else {
     res.json({"message": "Hello json"});
+  }
+    
 })
 
 
