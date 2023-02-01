@@ -21,6 +21,10 @@ app.get('/', (req, res) => {
     res.sendFile(absolutePath);
 })
 
+//Ex.5 Serve JSON on a Specific Route
+app.get('/json', (req, res) => {
+    res.json({"message": "Hello json"});
+})
 
 
 
