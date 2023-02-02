@@ -7,7 +7,7 @@ require('dotenv').config();
 
 //Ex.7 Middlewares
 app.use((req, res, next) => {
-  console.log(`${req.method} ${req.path} ${req.ip}`);
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
   next()
 })
 
