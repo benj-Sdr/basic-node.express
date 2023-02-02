@@ -42,6 +42,21 @@ app.get('/json', (req, res) => {
      res.json({"message":  "hello json"});
      }
 })
+//Ex.8 Chaining Middleware functions 
+
+app.get('/now', 
+    function(req, res, next) {
+      let d = new Date();
+      req.time = d.toString();
+      next();
+    }, 
+    (req, res) => {
+      res.json({
+        time: req.time
+      })
+    }
+
+)
 
 
 
