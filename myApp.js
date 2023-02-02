@@ -55,8 +55,13 @@ app.get('/now',
         time: req.time
       })
     }
-
 )
+
+//Ex.9 req.params
+app.get('/:word/echo', (req, res) => {
+  res.json( {echo: req.params.word} );
+  
+})
 
 
 
