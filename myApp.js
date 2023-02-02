@@ -4,6 +4,14 @@ let app = express();
 //Part of Ex.6 This is to load the environment varibles
 require('dotenv').config();
 
+
+//Ex.7 Middlewares
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path} ${req.ip}`);
+  next()
+})
+
+
 //To use middleware functions, mount the functions to app.use()
 //Ex.4 Serve Static Assets
 
@@ -34,7 +42,6 @@ app.get('/json', (req, res) => {
      res.json({"message":  "hello json"});
      }
 })
-
 
 
 
